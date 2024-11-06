@@ -1,6 +1,0 @@
-#!/bin/sh
-
-mkdir -p /challenge/bin && ln -sf /bin/curl /bin/nc /challenge/bin
-ln -sf /bin/python3.8 /run/challenge/bin/python
-
-/challenge/run >/dev/null
