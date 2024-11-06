@@ -9,6 +9,4 @@ with open("/flag", "r") as fObj:
 def hello():
 	return flag
 
-app.config["SERVER_NAME"] = f"challenge.localhost:80"
 app.run("challenge.localhost", 80)
-
