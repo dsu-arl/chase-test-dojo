@@ -1,0 +1,21 @@
+#!/opt/pwn.college/python
+from flask import Flask, request
+
+app = Flask(__name__)
+with open("/flag", "r") as fObj:
+    flag = fObj.read()
+
+@app.route("/")
+def hello():
+	return "<h1>Hello!</h1>"
+
+@app.route("/one")
+def requests_one():
+    # Check user agent
+    user_agent = request.headers.get('User-Agent')
+    if 'python-requests' in user_agent:
+        return flag
+    else:
+        return '<p>Wrong user agent!</p>'
+
+app.run("challenge.localhost", 80)
