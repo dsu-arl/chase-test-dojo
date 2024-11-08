@@ -11,3 +11,16 @@ If you're familiar with Python you may know that it has access to a large quanti
 Now, the 'math' library comes included with Python when you first install it, 'requests' does not. In a normal environment you would have to install 'requests' yourself by running the command `pip install requests`. However, in this environment 'requests' is already installed for you!
 
 In this challenge you will have to use python to send a `GET` request to `http://localhost/one`
+
+Use this example to perform your GET request:
+```
+# Import the requests library so we can use it
+import requests
+
+# Create a variable named response to store the data we
+# receive from calling requests.get
+response = requests.get(ENTER YOUR URL HERE)
+
+# Print the website data we were sent back
+print(response.text)
+```
