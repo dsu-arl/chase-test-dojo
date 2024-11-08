@@ -13,7 +13,7 @@ Now, the 'math' library comes included with Python when you first install it, 'r
 In this challenge you will have to use python to send a `GET` request to `http://localhost/one`
 
 Use this example to perform your GET request:
-```
+```python
 # Import the requests library so we can use it
 import requests
 
