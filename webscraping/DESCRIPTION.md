@@ -6,6 +6,6 @@ You can have a lot of fun with web scraping, and Python makes it very easy to do
 
 *This module assumes a basic understanding of programming and Python*
 
-## `requests` library
+## requests library
 
-## `beautifulsoup4` library
+## beautifulsoup4 library
