@@ -1,2 +1,2 @@
 #!/bin/sh
-ln -sf /bin/python3.8 /run/workspace/bin/python
+ln -sf /bin/python3.8 /challenge/python
