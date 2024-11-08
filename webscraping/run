@@ -86,7 +86,7 @@ example_website = """<!DOCTYPE html>
 </html>"""
 
 def correct_user_agent(agent) -> bool:
-    if 'python-requests' in user_agent:
+    if 'python-requests' in agent:
         return True
     return False
 
