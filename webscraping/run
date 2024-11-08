@@ -107,6 +107,6 @@ def requests_one():
 def requests_two():
     if not correct_user_agent(request.headers.get('User-Agent')):
         return wrong_agent
-    return example_webpage.replace('<h2>Breaking: Major Event Unfolding</h2>', f'<h2>{flag}</h2>')
+    return example_website.replace('<h2>Breaking: Major Event Unfolding</h2>', f'<h2>{flag}</h2>')
 
 app.run("challenge.localhost", 80)
