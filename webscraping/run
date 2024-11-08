@@ -109,4 +109,12 @@ def requests_two():
         return wrong_agent
     return example_website.replace('<h2>Breaking: Major Event Unfolding</h2>', f'<h2>{flag}</h2>')
 
+@app.route("/three", methods=['GET', 'POST'])
+def requests_three():
+    if request.method == 'GET':
+        return "<h1>hello</h1>"
+    elif request.method == 'POST':
+        data = request.get_json()
+        return data
+
 app.run("challenge.localhost", 80)
