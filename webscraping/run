@@ -115,6 +115,6 @@ def requests_three():
         return "<h1>hello</h1>"
     elif request.method == 'POST':
         data = request.get_json()
-        return data
+        return f"Here's the data you sent via a POST Request: {data}\n{flag}"
 
 app.run("challenge.localhost", 80)
