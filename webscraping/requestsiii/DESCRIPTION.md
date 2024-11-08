@@ -21,3 +21,5 @@ response = requests.post(ENTER YOUR URL HERE, json=data)
 # Print the website data we were sent back
 print(response.text)
 ```
+
+In this challenge, you have to send a POST request with any data you want.
