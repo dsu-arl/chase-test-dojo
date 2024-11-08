@@ -1,4 +1,4 @@
-name: Web Scraping
+name: webscraping
 challenges:
   - id: requestsi
     name: Requests Part I
