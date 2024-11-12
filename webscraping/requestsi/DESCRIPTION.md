@@ -10,7 +10,7 @@ If you're familiar with Python you may know that it has access to a large quanti
 
 Now, the 'math' library comes included with Python when you first install it, 'requests' does not. In a normal environment you would have to install 'requests' yourself by running the command `pip install requests`. However, in this environment 'requests' is already installed for you!
 
-In this challenge you will have to use python to send a `GET` request to `http://localhost/one`
+In this challenge you will have to use python to send a `GET` request to `http://localhost`
 
 Use this example to perform your GET request:
 ```python
