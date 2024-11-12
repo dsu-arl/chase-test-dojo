@@ -22,4 +22,4 @@ response = requests.post(ENTER YOUR URL HERE, json=data)
 print(response.text)
 ```
 
-In this challenge, you have to send a POST request to `http://localhost/three` with any data you want.
+In this challenge, you have to send a POST request to `http://localhost` with any data you want.
