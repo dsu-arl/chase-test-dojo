@@ -152,7 +152,7 @@ def correct_user_agent(agent) -> bool:
 @app.route("/", methods=['GET', 'POST'])
 def requests_three():
     if request.method == 'GET' and correct_user_agent(request.headers.get('User-Agent')):
-        return "<h1>hello</h1>"
+        return html
     elif request.method == 'POST' and correct_user_agent(request.headers.get('User-Agent')):
         data = request.get_json()
         # check the data to see if it's true
