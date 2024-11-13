@@ -160,6 +160,6 @@ def requests_three():
         ans = len(soup.find_all('a'))
         if int(data['answer']) == int(ans):
             return flag
-        return "<p>Wrong Answer!</p>
+        return "<p>Wrong Answer!</p>"
 
 app.run("challenge.localhost", 80)
