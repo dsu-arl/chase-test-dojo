@@ -22,3 +22,4 @@ for link in links:
 	print(link.get('href'))
 
 ```
+In your first Beautiful Soup challenge you will need to tell me exactly how many links are in the HTML code that you receive through a GET request. Then through a POST request you will send back the answer as follows `{'answer': <integer>}`, where integer is how many 'a' tags there are.
