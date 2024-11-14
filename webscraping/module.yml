@@ -8,3 +8,5 @@ challenges:
     name: Requests Part III
   - id: beautifulsoupi
     name: Beautifulsoup Part I
+  - id: beautifulsoupii
+    name: Beautifulsoup Part II
