@@ -22,4 +22,14 @@ for link in links:
 	print(link.get('href'))
 
 ```
+
+NOTE: If Beautiful Soup is not able to find any tags that you specify, it will return None. This allows you to test if you found any tags with the following `if` statement:
+
+```python
+if links == None:
+	# Code that runs if we DON'T find links
+else:
+	# Code that runs if we DO find links
+```
+
 In your first Beautiful Soup challenge you will need to tell me exactly how many links are in the HTML code that you receive through a GET request. Then through a POST request you will send back the answer as follows `{'answer': <integer>}`, where integer is how many 'a' tags there are.
