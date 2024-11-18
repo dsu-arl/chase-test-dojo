@@ -8,3 +8,6 @@ You can have a lot of fun with web scraping, and Python makes it very easy to do
 
 Further information on the [requests](https://requests.readthedocs.io/en/latest/) library.
 Further information on the [beautiful soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) library.
+
+# Disclaimer:
+Web scraping can involve legal and ethical considerations. Many websites have terms of service (ToS) that explicitly prohibit scraping. Violating these terms could lead to legal consequences under laws like the Computer Fraud and Abuse Act (CFAA) in the U.S. or equivalent laws in other countries. Additionally, scraping personal or sensitive data may violate privacy laws like GDPR (Europe) or CCPA (California). Always check a website's ToS and ensure compliance with local laws before scraping.
