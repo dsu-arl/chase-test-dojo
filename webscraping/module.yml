@@ -10,3 +10,5 @@ challenges:
     name: Beautifulsoup Part I
   - id: beautifulsoupii
     name: Beautifulsoup Part II
+  - id: beautifulsoupiii
+    name: Beautifulsoup Part III
