@@ -10,6 +10,6 @@ You can format your data as follows:
 data = {'answer1': INTEGER, 'answer2': STRING OR INTEGER, 'answer3': STRING}
 ```
 
-This challenge will test what you've learned with requests, beautifulsoup, and python in general. It may take some time to complete fully.
+This challenge is relatively difficult and will test what you've learned with requests, beautifulsoup, and python in general. It may take some time to complete fully and you may need to use outside resources. 
 
 HINT: This [Stack Overflow article](https://stackoverflow.com/questions/23377533/python-beautifulsoup-parsing-table) gives a great example of how to parse out data from a table.
