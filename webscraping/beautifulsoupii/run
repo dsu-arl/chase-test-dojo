@@ -202,6 +202,7 @@ def requests_three():
         # check the data to see if it's true
         soup = BeautifulSoup(html, 'html.parser')
         ans = len(soup.find_all('.secret'))
+        print(f"DEBUG: {ans}")
         if int(data['answer1']) == int(ans):
             if data['answer2'] == "P@55w0rd1!":
                 return flag
