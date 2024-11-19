@@ -202,8 +202,12 @@ def requests_three():
         # check the data to see if it's true
         soup = BeautifulSoup(html, 'html.parser')
         ans = len(soup.find_all('.secret'))
-        if int(data['answer1']) == int(ans) and data['answer2'] == "P@55w0rd1!":
-            return flag
-        return "<p>Wrong Answer!</p>"
+        if int(data['answer1']) == int(ans):
+            if data['answer2'] == "P@55w0rd1!":
+                return flag
+            else:
+                return "<p>answer2 is incorrect!</p>"
+        else:
+            return "<p>answer1 is incorrect!</p>"
 
 app.run("challenge.localhost", 80)
