@@ -115,14 +115,15 @@ def requests_three():
         table = soup.find('table')
         table_body = table.find('tbody')
         rows = table_body.find_all('tr')
+        table_data = []
         for row in rows:
             cols = row.find_all('td')
             cols = [ele.text.strip() for ele in cols]
-            data.append([ele for ele in cols if ele])
+            table_data.append([ele for ele in cols if ele])
 
         answer1 = 0
         answer3 = 600.00
-        for d in data:
+        for d in table_data:
             price = float(d[-1].replace('$', ''))
             if price >= 20.00 and price <= 50.00:
                 answer1 += 1
