@@ -10,6 +10,8 @@ def main():
     s.bind(('localhost', 1337))
     s.listen(3)
 
+    print("Socket server is set up!")
+    print("Connect to me at '127.0.0.1' on port 1337!")
     while True:
         client, addr = s.accept()
         buf = client.recv(1024)
