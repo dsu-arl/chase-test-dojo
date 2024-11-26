@@ -1,8 +1,20 @@
 #!/opt/pwn.college/python
 import socket
 
+with open('/flag', 'r') as fObj:
+    flag = fObj.read()
+
 def main():
-    pass
+    # Create server
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.bind(('localhost', 1337))
+    s.listen(3)
+
+    while True:
+        client, addr = s.accept()
+        buf = client.recv(1024)
+        if len(buf) > 0:
+            client.send(flag.encode())
 
 if __name__ == "__main__":
     main()
