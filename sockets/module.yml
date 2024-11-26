@@ -1,0 +1,4 @@
+name: sockets
+challenges:
+  - id: socketcreation
+    name: Socket Creation
