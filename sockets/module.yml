@@ -2,3 +2,5 @@ name: sockets
 challenges:
   - id: socketcreation
     name: Socket Creation
+  - id: serversocketcreation
+    name: Server Socket Creation
