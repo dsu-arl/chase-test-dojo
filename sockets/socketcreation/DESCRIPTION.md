@@ -40,10 +40,10 @@ After you create a socket, you have to decide whether you are creating a `client
 resource_address = ('IP', PORT_NUMBER)   # Notice, this is a tuple.
 sock.connect(resource_address)
 
-sock.send(DATA)
+sock.send('DATA'.encode())
 dirtuh = sock.recv(SIZE_IN_BYTES)
 
-print(dirtuh)
+print(dirtuh.decode('UTF-8'))
 sock.close()
 ```
 
