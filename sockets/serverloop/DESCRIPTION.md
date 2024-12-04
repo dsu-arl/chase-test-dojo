@@ -11,3 +11,5 @@ We can implement this in our code by writing a `while` loop (you can just use `w
 Hint: This [StackOverflow Article](https://stackoverflow.com/questions/7749341/basic-python-client-socket-example) may prove helpful.
 
 In this challenge, edit your server code so that it doesn't stop executing after one connection, but stays running and ready to accept new connections. When you're done, start your server, and run `/challenge/run` to test if it works.
+
+Keep in mind, for each new connection you get, you will need to receive data coming from the client and print it out.
