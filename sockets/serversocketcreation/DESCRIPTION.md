@@ -21,25 +21,32 @@ From here, our steps diverge slightly. Rather than connecting our socket to a re
 
 ```python
 # Bind the socket to our desired address and port
+
 sock.bind(bind_addr)	# Another way to write this without a variable would be 'sock.bind(('127.0.0.1', 1337))'
 ```
 
 ```python
-# Listen for incoming connections
-# The paramater to the 'listen' method for our socket denotes the backlog.
-# If backlog is specified, it must be at least 0 (if it is lower, it is set to 0); 
-# it specifies the number of unaccepted connections that the system will allow before
-# refusing new connections. If not specified, a default reasonable value is chosen.
+'''
+Listen for incoming connections
+The paramater to the 'listen' method for our socket denotes the backlog.
+If backlog is specified, it must be at least 0 (if it is lower, it is set to 0); 
+it specifies the number of unaccepted connections that the system will allow before
+refusing new connections. If not specified, a default reasonable value is chosen.
+'''
+
 sock.listen(1)
 ```
 
 ```python
-# Accept any incoming connections
-# We provide two varibles 'client_socket' and 'client_address'
-# because the 'accept' method returns two variables.
-# 'client_socket' will be an actual socket we can 'send' and 'recv'
-# data from.
-# 'client_address' is information about that socket. 
+'''
+Accept any incoming connections
+We provide two varibles 'client_socket' and 'client_address'
+because the 'accept' method returns two variables.
+'client_socket' will be an actual socket we can 'send' and 'recv'
+data from.
+'client_address' is information about that socket. 
+'''
+
 client_socket, client_address = sock.accept()
 ```
 
