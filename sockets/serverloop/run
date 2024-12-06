@@ -15,7 +15,10 @@ def main():
     except socket.error as e:
         print(f"Socket Error: {e}. Failed to connect!")
 
-    s.send('First connection\n'.encode())
+    try:
+        s.send('First connection\n'.encode())
+    except BrokenPipeError:
+        print("Failed to send data to server.")
 
     print("First request was sent to your server!")
 
@@ -28,7 +31,10 @@ def main():
     except socket.error as e:
         print(f"Socket Error: {e}. Failed to connect!")
 
-    z.send(flag.encode())
+    try:
+        z.send(flag.encode())
+    except BrokenPipeError:
+        print("Failed to send data to server.")
 
     print("Flag was sent over to your server!")
 
