@@ -8,3 +8,5 @@ challenges:
     name: Server Loop
   - id: eightballclient
     name: Eight Ball Client
+  - id: toolsofthetrade
+    name: Tools of the Trade
