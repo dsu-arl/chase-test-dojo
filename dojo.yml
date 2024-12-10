@@ -7,3 +7,4 @@ modules:
   - id: module1
   - id: webscraping
   - id: sockets
+  - id: threading
