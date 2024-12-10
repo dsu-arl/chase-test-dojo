@@ -7,15 +7,19 @@ As you learn how to write python programs, you learn how to write single threade
 A normal python program that you write is executed as a single thread. Threading allows us to add in as many threads as we want (or however many our computer can handle). This means you can have several different execution threads that run pseudo-simultaneously. I say 'pseudo-simultaneously' because, in general, our computer processors can only execute one instruction at a time. Yet, modern CPU's implement technology to allow concurrent commands to be executed. They do this by breaking up the CPU into different 'cores' that each operate as if they are different CPUs. This allows us to create programs that run simultaneously. 
 
 Basic Program:
+```
             Main Thread
         - - - - - - - - - -
+```
 
 Threaded Program:
+```
 
                 Main Thread
          - - - - - - - - - - - - - -
                 - - - - - - 
                  2nd Thread
+```
 
 ## What is this used for?
 
