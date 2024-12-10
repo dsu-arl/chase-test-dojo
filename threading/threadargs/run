@@ -1,0 +1,62 @@
+#!/opt/pwn.college/python
+import argparse
+
+def main():
+    if args.filename == '':
+        print("Please supply a proper file with it's full path.")
+        exit(0)
+
+    _import = False
+    _funcdef = False
+    _Thread = False
+    _start = False
+    _extra = False
+    _join = False
+
+    with open(args.filename, 'r') as fObj:
+        data = [x.strip() for x in fObj.readlines() if x != '' or x != '\n']
+
+    for line in data:
+        if not _import and 'import threading' in line:
+            _import = True
+        elif not _funcdef and 'def thread_func' in line and ',' in line:
+            _funcdef = True
+        elif not _Thread and 'threading.Thread' in line:
+            if 'target' in line and 'thread_func' in line:
+                if 'args' in line:
+                    _Thread = True
+        elif not _start and '.start()' in line:
+            _start = True
+        elif not _extra and _start and not _join and 'print' in line:
+            _extra = True
+        elif not _join and '.join()' in line:
+            _join = True
+
+    if _import:
+        if _Thread:
+            if _start:
+                if _extra:
+                    if _join:
+                        if _funcdef:
+                            with open("/flag", 'r') as fObj:
+                                print("All checks passed!")
+                                print(fObj.read().strip())
+                        else:
+                            print("Your function definition for 'thread_func' is wrong!")
+                    else:
+                        print("Failed to join created thread to main thread!")
+                else:
+                    print("Failed to print between start and join!")
+            else:
+                print("Failed to start thread!")
+        else:
+            print("Failed to create Thread properly!")
+    else:
+        print("Failed to import properly!")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("filename", default='', type=str, help="Direct filepath for your python file.")
+    args = parser.parse_args()
+    main()

@@ -2,3 +2,5 @@ name: threading
 challenges:
   - id: createthread
     name: Create a Thread
+  - id: threadargs
+    name: Thread Arguments
