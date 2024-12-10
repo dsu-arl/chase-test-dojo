@@ -22,4 +22,6 @@ Ok, now that our function takes in arguments, how do we actually pass them to ou
 ```python
 t1 = threading.Thread(target=thread_func, args=<tuple with arguments>)
 ```
+A tuple is like a list, except you cannot modify it. An example of a tuple containing strings looks like this: `myTuple = ('item1', 'item2')`
+
 Make the appropriate changes to your program and run it to see the effects! Once you have done that, run `/challenge/run <filename>` to verify that your code is correct to get your flag!
