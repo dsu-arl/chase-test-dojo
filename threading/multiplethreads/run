@@ -1,0 +1,40 @@
+#!/opt/pwn.college/python
+import psutil
+import argparse
+import subprocess
+from time import sleep
+from os.path import exists
+
+def get_thread_count(pid):
+    try:
+        proc = psutil.Process(pid)
+        return proc.num_threads()
+    except psutil.NoSuchProcess:
+        return 0
+
+def main():
+    if args.file == '' or not exists(args.file):
+        print("Please give the full path of your file!")
+
+    # Run user supplied file in daemon
+    proc = subprocess.Popen(["python", args.file], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+    sleep(3)
+    
+    # Get pid
+    command = f"ps aux | grep 'python {args.file}'"
+    output = subprocess.run(command, shell=True, stdout=subprocess.PIPE, text=True)
+
+    pid = int([x for x in output.stdout.split('\n')[0].split(' ') if x != ''][1])
+    print(f"PID: {pid}")
+
+    # Get thread count
+    threads = get_thread_count(pid)
+    print(f"Threads: {threads}")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("file", type=str, default='', help="File to verify")
+    args = parser.parse_args()
+    main()
