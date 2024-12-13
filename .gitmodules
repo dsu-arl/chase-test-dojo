@@ -1,0 +1,9 @@
+[submodule "threading/createthread/paceAITester"]
+	path = threading/createthread/paceAITester
+	url = https://github.com/dsu-arl/paceAITester
+[submodule "threading/threadargs/paceAITester"]
+	path = threading/threadargs/paceAITester
+	url = https://github.com/dsu-arl/paceAITester
+[submodule "threading/multiplethreads/paceAITester"]
+	path = threading/multiplethreads/paceAITester
+	url = https://github.com/dsu-arl/paceAITester

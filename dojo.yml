@@ -5,6 +5,10 @@ award:
   emoji: 😀
 modules:
   - id: module1
+    name: module1
   - id: webscraping
+    name: Web Scraping
   - id: sockets
+    name: Sockets
   - id: threading
+    name: Threading

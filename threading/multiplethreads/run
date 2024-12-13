@@ -1,40 +1,46 @@
 #!/opt/pwn.college/python
-import psutil
 import argparse
-import subprocess
-from time import sleep
+from pprint import pprint
 from os.path import exists
-
-def get_thread_count(pid):
-    try:
-        proc = psutil.Process(pid)
-        return proc.num_threads()
-    except psutil.NoSuchProcess:
-        return 0
+from paceAITester.verify_helpers import extract_python_details, find_function_call
 
 def main():
-    if args.file == '' or not exists(args.file):
-        print("Please give the full path of your file!")
+    if not exists(args.file):
+        print(f"File {args.file} does not appear to exist.")
+        exit(0)
 
-    # Run user supplied file in daemon
-    proc = subprocess.Popen(["python", args.file], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    append = False
+    start = False
+    join = False
 
-    sleep(3)
-    
-    # Get pid
-    command = f"ps aux | grep 'python {args.file}'"
-    output = subprocess.run(command, shell=True, stdout=subprocess.PIPE, text=True)
+    lines = extract_python_details(args.file)
+    for line in lines:
+        if 'append' in line['function']:
+            append = True
+        elif 'start' in line['function']:
+            start = True
+        elif 'join' in line['function']:
+            join = True
 
-    pid = int([x for x in output.stdout.split('\n')[0].split(' ') if x != ''][1])
-    print(f"PID: {pid}")
+    if not join:
+        print("You never joined your threads back to the main thread!")
+        exit(0)
+    if not append:
+        print("Looks like you weren't using a list to track your threads! Try using a list!")
+        exit(0)
+    if not start:
+        print("You never started your threads!")
+        exit(0)
 
-    # Get thread count
-    threads = get_thread_count(pid)
-    print(f"Threads: {threads}")
+    with open('/flag', 'r') as fObj:
+        print(fObj.read().strip())
+
+
+
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("file", type=str, default='', help="File to verify")
+    parser.add_argument("file", type=str, default='', help="User file to verify")
     args = parser.parse_args()
     main()
