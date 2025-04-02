@@ -12,3 +12,5 @@ modules:
     name: Sockets
   - id: threading
     name: Threading
+  - id: objects
+    name: Objects

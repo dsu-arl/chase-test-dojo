@@ -1,0 +1,6 @@
+name: Objects
+challenges:
+  - id: instances
+    name: Instances
+  - id: arguments
+    name: Arguments
