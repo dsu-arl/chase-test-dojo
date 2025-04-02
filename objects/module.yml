@@ -6,3 +6,5 @@ challenges:
     name: Arguments
   - id: knowledgechecki
     name: Knowledge Check I
+  - id: subclass
+    name: Sub-Class
