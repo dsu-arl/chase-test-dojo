@@ -4,3 +4,5 @@ challenges:
     name: Instances
   - id: arguments
     name: Arguments
+  - id: knowledgechecki
+    name: Knowledge Check I
