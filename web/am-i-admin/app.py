@@ -6,14 +6,6 @@ from secrets import token_hex
 app = Flask(__name__)
 app.secret_key = token_hex(32)
 
-try:
-	with open('/flag', 'r') as fObj:
-		flag = fObj.read()
-except Exception as e:
-	print(e)
-	print("Failed to get flag from '/flag'!")
-
-
 
 @app.route("/")
 def home():
@@ -33,4 +25,10 @@ def admin():
         resp.set_cookie("isadmin", "0")
         return resp
     else:
+		try:
+			with open('/flag', 'r') as fObj:
+				flag = fObj.read()
+		except Exception as e:
+			print(e)
+			print("Failed to read flag!")
         return render_template("admin.html", flag=flag, isadmin=isadmin)
