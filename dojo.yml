@@ -14,3 +14,6 @@ modules:
     name: Threading
   - id: objects
     name: Objects
+  - id: web
+    name: Web
+    image: copsahl/pwncollege-web
