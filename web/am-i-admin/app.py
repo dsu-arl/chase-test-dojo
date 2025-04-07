@@ -29,3 +29,6 @@ def admin():
         with open('/flag', 'r') as fObj:
             flag = fObj.read()
         return render_template("admin.html", flag=flag, isadmin=isadmin)
+
+if __name__ == '__main__':
+    app.run()
