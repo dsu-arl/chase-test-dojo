@@ -1,4 +1,4 @@
-#!/usr/bin/exec-suid --real -- /usr/bin/python -I
+#!/usr/bin/exec-suid -- /usr/bin/python -I
 
 from flask import Flask, render_template, make_response, request
 from secrets import token_hex
