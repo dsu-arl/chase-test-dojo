@@ -25,10 +25,10 @@ def admin():
         resp.set_cookie("isadmin", "0")
         return resp
     else:
-		try:
-			with open('/flag', 'r') as fObj:
-				flag = fObj.read()
-		except Exception as e:
-			print(e)
-			print("Failed to read flag!")
+        try:
+            with open('/flag', 'r') as fObj:
+                flag = fObj.read()
+        except Exception as e:
+            print(e)
+            print("Failed to read flag!")
         return render_template("admin.html", flag=flag, isadmin=isadmin)
