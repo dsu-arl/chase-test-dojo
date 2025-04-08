@@ -12,8 +12,8 @@ try:
         flag = fObj.read()
 except Exception as e:
     print(e)
-	print("Unable to read flag from '/flag'!")
-	exit(0)
+    print("Unable to read flag from '/flag'!")
+    exit(0)
 
 @app.route("/")
 def home():
