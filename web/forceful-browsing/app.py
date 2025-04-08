@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-
+#!/usr/bin/exec-suid -- /usr/bin/python3 -I
 from flask import Flask, render_template, redirect
 
 app = Flask(__name__)
